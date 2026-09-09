@@ -1,50 +1,80 @@
-# 📦 [Atilê da Suuh] — Gestão de Encomendas
+# 📦 Ateliê da Suuh — Sistema de Gestão de Encomendas e Produção
 
-> App Android para organizar encomendas de produtos personalizados (bottons, marcadores, fotocards, polaroids) feitas sob medida.
+Sistema web para automatizar a criação de artes e a gestão de encomendas do **Ateliê da Suuh**, especializado em bottons, chaveiros, ímãs de geladeira, marca-páginas e fotos polaroid.
+
+O sistema permite montar layouts de impressão prontos para produção (PDF em 600 DPI, folha A4), além de organizar pedidos, prazos e status de produção da equipe.
 
 ---
 
-## O problema
+## ✨ Funcionalidades
 
-Quem produz itens personalizados por encomenda — bottons, marcadores de página, fotocards, polaroids — hoje organiza os pedidos de forma manual e espalhada: anotações em papel, conversas de WhatsApp com as fotos dos clientes, cálculo de quantidade "de cabeça". É fácil perder pedido, esquecer detalhe ou perder tempo procurando a foto certa na hora de produzir.
+### 🎨 Editor de Artes
+- Upload de imagens com recorte circular, quadrado ou em formato de coração
+- Zoom e arraste (pan) para ajuste fino da foto dentro da forma
+- Seleção de tamanho por imagem (32mm / 44mm / 58mm)
+- Modo de borda **orgânica** (gradiente radial) ou **centralizada**
+- Seletor de cor com conta-gotas duplo
+- Produtos suportados: botton redondo, quadrado, coração, chaveiro, ímã, marca-página e polaroid
+- Polaroid com legenda manuscrita ou normal, suporte a múltiplas linhas e seleção de fonte (Google Fonts)
 
-## Para quem é
+### 🧩 Layout e Impressão
+- Algoritmo de empacotamento (*shelf packing*) para organizar tamanhos mistos automaticamente
+- Modo manual de posicionamento (arrastar e soltar)
+- Prévia em tempo real da folha A4
+- Geração de PDF em alta resolução (600 DPI), pronto para corte/prensa
 
-Pequenos produtores e artesãos que vendem esse tipo de item personalizado por encomenda — em geral uma pessoa só, ou uma microempresa familiar, cuidando de tudo ao mesmo tempo: atender cliente, organizar produção e entregar.
+### 📋 Gestão de Encomendas
+- Cadastro de pedidos por cliente
+- Acompanhamento de status (em produção, pronto, entregue etc.)
+- Organização de prazos e prioridades
+- Login com senha e sessão protegida por token
 
-## O que o app faz
+---
 
-- **Cadastrar encomendas** — nome do cliente, tipo de produto (button redondo/quadrado/coração, marcador, fotocard, polaroid), quantidade, tamanho e uma observação livre.
-- **Anexar as fotos** que o cliente mandou, direto no pedido (câmera ou galeria do celular).
-- **Listar encomendas** com status (pendente → em produção → pronto → entregue), pra visualizar rápido o que falta fazer.
-- **Marcar como concluído/entregue**, tirando o pedido da lista de pendências.
+## 👥 Equipe
 
-## Fora do escopo (por enquanto)
-
-- Geração de arte pra impressão, recorte de imagem, diagramação em folha A4 — o app organiza pedidos, não produz a arte final.
-- Loja/venda online, pagamento, catálogo público.
-
-## Diferencial
-
-Feito sob medida pra esse tipo específico de produção — não é um app de tarefas genérico. Os campos e o fluxo já nascem pensando em produto, quantidade e foto do cliente, que é o que de fato importa pra quem faz esse trabalho.
-
-## Tecnologia
-
-- **Room** — guarda as encomendas localmente no celular, funcionando mesmo sem internet (cenário comum em feira/oficina com sinal ruim).
-- *(Opcional, se sobrar tempo)* **Retrofit** — sincronizar/fazer backup das encomendas num servidor.
-
-## Equipe
-
-| Nome | Papel |
+| Nome | Função |
 |---|---|
-| — | — |
+| **Amabily** | Desenvolvimento do sistema (frontend, backend, automação de PDF e manutenção técnica) |
+| **Analy** | Atendimento ao cliente e organização das encomendas |
+| **Fabio Mateus** | Produção física (prensa, corte e acabamento dos produtos) |
 
-## Status do projeto
+*Cliente: **Suuh**, proprietária do Ateliê e responsável pela identidade da marca.*
 
-🚧 Em desenvolvimento — Módulo 03, Projeto Final.
+---
 
-## Como rodar
+## 🛠️ Stack Técnica
 
+- **Frontend:** HTML/CSS/JS — hospedado na **Netlify**
+- **Backend:** Node.js + Express — hospedado no **Render**
+- **Geração de PDF:** jsPDF
+- **Autenticação:** login com senha + sessão por token
+
+---
+
+## 🚀 Como rodar localmente
+
+```bash
+# Clonar o repositório
+git clone <url-do-repositorio>
+cd ateliê-da-suuh
+
+# Instalar dependências
+npm install
+
+# Rodar o servidor
+npm start
 ```
-# instruções de build serão adicionadas conforme o projeto avança
-```
+
+O frontend pode ser servido separadamente (Netlify) apontando para a URL do backend no Render.
+
+---
+
+## 📌 Próximos passos / Bugs conhecidos
+
+- [ ] Corrigir comportamento de zoom no modo botton centralizado (foto perde o formato circular e encolhe ao dar zoom out)
+- [ ] Finalizar configuração do segundo Web Service no Render (repositório `servidor`)
+
+---
+
+*Desenvolvido com 💛 para o Ateliê da Suuh.*
