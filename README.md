@@ -1,97 +1,81 @@
-# 📦 Ateliê da Suuh — App de Gestão de Encomendas e Produção
+Ateliê da Suuh
 
-Aplicativo para Android do **Ateliê da Suuh**, criado para automatizar a produção de artes e organizar as encomendas de bottons, chaveiros, ímãs de geladeira, marca-páginas e fotos polaroid.
+App Android para ajudar a Suely a organizar o status das encomendas, os pagamentos e o faturamento do seu ateliê — sem precisar de caderno de papel, calculadora e agenda separados.
 
-O app permite montar layouts de impressão prontos para produção (PDF em 600 DPI, folha A4) direto do celular, além de acompanhar pedidos, prazos e status de produção da equipe.
+Projeto final — Módulo 03, 3º ano A (Ensino Médio). Entrega: 10/12/2026.
 
----
+📖 Sobre o projeto
 
-## 📱 Sobre o app
+A Suely vende produtos variados por encomenda — lingerie, bottoms, chaveiros e crochê — e hoje anota tudo em vários cadernos e agendas diferentes, o que faz com que informações se percam. As contas de faturamento e pagamento são feitas de cabeça, na correria, sem calculadora por perto, o que aumenta o risco de erro.
 
-O Ateliê da Suuh funciona como um **PWA (Progressive Web App)** — ou seja, é instalado no celular como um app normal (ícone na tela inicial, tela cheia, sem barra de navegador), mas construído a partir do sistema web já existente.
+O Ateliê da Suuh resolve isso reunindo, em um único lugar:
 
-**Vantagens desse formato:**
-- Instala direto no Android sem precisar de Play Store
-- Abre e funciona como um app nativo
-- Continua funcionando também em computador/navegador, sem duplicar código
-- Atualizações no servidor refletem automaticamente no app
+as encomendas em andamento, organizadas por status (pendente / em produção / pronta);
+o controle de pagamento de cada encomenda (pago / não pago);
+o faturamento total e contadores de quanto falta receber e quantas encomendas pagas aguardam entrega.
 
----
+O app funciona 100% local, direto no celular, sem necessidade de internet.
 
-## ✨ Funcionalidades
+✨ Funcionalidades
+#	Funcionalidade	Responsável
+F1	Cadastro e lista de encomendas por status (pendente / em produção / pronta), com aba separada para "Entregues"	Amabily
+F2	Controle de pagamento (pago / não pago + valor), com soma automática do faturamento total e contadores de encomendas a pagar / pagas aguardando entrega	Fábio Matheus
+F3	Calculadora simples embutida	Analy
 
-### 🎨 Editor de Artes
-- Upload de imagens com recorte circular, quadrado ou em formato de coração
-- Zoom e arraste (pan) para ajuste fino da foto dentro da forma
-- Seleção de tamanho por imagem (32mm / 44mm / 58mm)
-- Modo de borda **orgânica** (gradiente radial) ou **centralizada**
-- Seletor de cor com conta-gotas duplo
-- Produtos suportados: botton redondo, quadrado, coração, chaveiro, ímã, marca-página e polaroid
-- Polaroid com legenda manuscrita ou normal, suporte a múltiplas linhas e seleção de fonte (Google Fonts)
+Fora do escopo desta versão: login/cadastro de usuário, sincronização com a nuvem, notificações push, chat, mapa e processamento real de pagamento (o app apenas marca se uma encomenda foi paga, sem integrar com meios de pagamento).
 
-### 🧩 Layout e Impressão
-- Algoritmo de empacotamento (*shelf packing*) para organizar tamanhos mistos automaticamente
-- Modo manual de posicionamento (arrastar e soltar)
-- Prévia em tempo real da folha A4
-- Geração de PDF em alta resolução (600 DPI), pronto para corte/prensa
+📱 Como usar
+Na tela principal, veja as encomendas listadas com cliente, produto, valor e status de pagamento.
+Um resumo no topo mostra o faturamento total, quantas encomendas faltam pagar e quantas já foram pagas e aguardam entrega.
+Toque em uma encomenda para marcar como paga e/ou como entregue — os totais e contadores são atualizados na hora.
+Encomendas marcadas como entregues passam para a aba "Entregues".
+🛠️ Tecnologias
+Linguagem: Kotlin
+Persistência de dados: Room (banco de dados local no celular)
+applicationId: br.edu.ifpe.ateliedasuuh
+Versão: 1.0 (versionCode 1)
+🎨 Identidade visual
+Item	Definição
+Nome exibido	Ateliê da Suuh
+Cor principal	
+#8B6AAE
+Tesoura + agulha com linha, em traço branco, sobre fundo degradê roxo — remete ao trabalho manual do ateliê.
+🚀 Como rodar o projeto
+Clone o repositório:
+bash
+   git clone https://github.com/AmabilyH/projeto-final-Ateli-da-Suuh-.git
+Abra a pasta no Android Studio.
+Aguarde a sincronização do Gradle.
+Rode em um emulador ou dispositivo físico com o Android configurado para depuração USB.
+Gerando o build de release
+bash
+# .apk (para teste em dispositivos)
+./gradlew assembleRelease
 
-### 📋 Gestão de Encomendas
-- Cadastro de pedidos por cliente
-- Acompanhamento de status (em produção, pronto, entregue etc.)
-- Organização de prazos e prioridades
-- Login com senha e sessão protegida por token
+# .aab (para publicação na loja)
+./gradlew bundleRelease
 
----
+Os artefatos gerados ficam em app/build/outputs/.
 
-## 👥 Equipe
+👥 Equipe
+Integrante	Papel	Responsável por
+Amabily	Dev / dados e funcionalidades complexas (Room)	Cadastro e lista de encomendas com status; estrutura do banco de dados
+Analy	Dev / telas simples	Calculadora; apoio na identidade visual (cores, ícone)
+Fábio Matheus	Dev / funcionalidades médias + documentação	Controle de pagamento, soma e contadores; README, AGENTS.md e geração do build/apk
+🗓️ Marcos do projeto
+Marco	Prazo	Status
+M1 — Canvas preenchido + repositório criado	16/09	✅
+M2 — PRD aprovado + telas rascunhadas	30/09	⏳
+M3 — Funcionalidade base rodando	21/10	⏳
+M4 — Dados completos (Room) e erros tratados	11/11	⏳
+M5 — Identidade visual + .apk de release testado	25/11	⏳
+M6 — .aab + material de loja + README final	02/12	⏳
+Entrega e apresentação	10/12	⏳
+📄 Documentação relacionada
+CANVAS.md — visão geral do projeto
+PRD.md — requisitos detalhados do produto
+AGENTS.md — regras de uso da IA neste projeto
+docs/USO_DE_IA.md — registro de uso da IA
+📝 Licença
 
-| Nome | Função |
-|---|---|
-| **Amabily** | Desenvolvimento do sistema (frontend, backend, automação de PDF e manutenção técnica) |
-| **Analy** | Atendimento ao cliente e organização das encomendas |
-| **Fabio Mateus** | Produção física (prensa, corte e acabamento dos produtos) |
-
-*Cliente: **Suuh**, proprietária do Ateliê e responsável pela identidade da marca.*
-
----
-
-## 🛠️ Stack Técnica
-
-- **Frontend / App:** HTML/CSS/JS empacotado como PWA — hospedado na **Netlify**
-- **Backend:** Node.js + Express — hospedado no **Render**
-- **Geração de PDF:** jsPDF
-- **Autenticação:** login com senha + sessão por token
-- **Instalação no Android:** manifest PWA (`manifest.json`) + service worker
-
----
-
-## 🚀 Como rodar localmente
-
-```bash
-# Clonar o repositório
-git clone <url-do-repositorio>
-cd ateliê-da-suuh
-
-# Instalar dependências
-npm install
-
-# Rodar o servidor
-npm start
-```
-
-O frontend/app pode ser servido separadamente (Netlify) apontando para a URL do backend no Render.
-
-Para testar a instalação como app no Android, acesse o site pelo Chrome do celular e use a opção **"Adicionar à tela inicial"** (ou o prompt automático de instalação, quando configurado).
-
----
-
-## 📌 Próximos passos / Bugs conhecidos
-
-- [ ] Configurar `manifest.json` e ícone do app para instalação como PWA
-- [ ] Adicionar service worker para funcionamento offline básico
-- [ ] Corrigir comportamento de zoom no modo botton centralizado (foto perde o formato circular e encolhe ao dar zoom out)
-- [ ] Finalizar configuração do segundo Web Service no Render (repositório `servidor`)
-
----
-
-*Desenvolvido com 💛 para o Ateliê da Suuh.*
+Projeto acadêmico desenvolvido para fins e
