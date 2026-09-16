@@ -87,7 +87,7 @@
 |---|---|
 | Nome exibido (`strings.xml`) | Ateliê da Suuh |
 | Cor principal (hex, em `Color.kt`) | `#8B6AAE` |
-| Ideia do ícone (512×512) | Uma agulha com linha, em tom roxo — remetendo ao ateliê de forma geral (lingerie, bottoms, chaveiros, crochê), sem ficar limitado só à costura |
+| Ideia do ícone (512×512) | Tesoura + agulha com linha, em traço branco, sobre fundo degradê roxo — remete ao trabalho manual do ateliê. |
 | `applicationId` | `br.edu.ifpe.ateliedasuuh` |
 | Versão inicial | `1.0` (versionCode `1`) |
 
