@@ -1,0 +1,5 @@
+<resources>
+    <!-- comentário de fronteira: strings.xml — todo texto visível do app deve
+         entrar aqui, nunca escrito direto no código (RNF05 do PRD). -->
+    <string name="app_name">Ateliê da Suuh</string>
+</resources>

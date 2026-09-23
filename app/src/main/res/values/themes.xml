@@ -1,0 +1,6 @@
+<resources>
+    <!-- comentário de fronteira: themes.xml — tema "de sistema" usado só pela
+         splash/janela inicial antes do Compose assumir; as cores de verdade do
+         app (roxo #8B6AAE) ficam em ui/theme/Color.kt e Theme.kt. -->
+    <style name="Theme.AtelieDaSuuh" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>
